@@ -28,4 +28,4 @@ Thumbs.db
 data/crop/YAMLCropDataProvider.pkl
 
 # Wheater data generated
-data/meteo/weather_hydro.csv
+data/meteo/*

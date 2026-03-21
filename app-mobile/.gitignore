@@ -14,3 +14,9 @@ next.user-config.*
 node_modules
 .next/
 .DS_Store
+
+# npm
+package-lock.json
+
+# Next.js
+next-env.d.ts
