@@ -60,14 +60,14 @@ export function History() {
           title={lang === "es" ? "Sin simulaciones" : "No simulations"}
           description={
             lang === "es"
-              ? "Aun no has realizado ninguna simulacion"
+              ? "Aun no has realizado ninguna simulación"
               : "You haven't run any simulations yet"
           }
         >
           <HistoryIcon className="h-12 w-12 text-muted-foreground/50" />
         </Empty>
         <Button onClick={() => navigateTo("new-simulation")}>
-          {lang === "es" ? "Crear primera simulacion" : "Create first simulation"}
+          {lang === "es" ? "Crear primera simulación" : "Create first simulation"}
         </Button>
       </div>
     );
@@ -120,11 +120,11 @@ export function History() {
                   <AlertDialogContent>
                     <AlertDialogHeader>
                       <AlertDialogTitle>
-                        {lang === "es" ? "Eliminar simulacion" : "Delete simulation"}
+                        {lang === "es" ? "Eliminar simulación" : "Delete simulation"}
                       </AlertDialogTitle>
                       <AlertDialogDescription>
                         {lang === "es"
-                          ? "Esta accion no se puede deshacer. Se eliminara permanentemente esta simulacion."
+                          ? "Esta accion no se puede deshacer. Se eliminara permanentemente esta simulación."
                           : "This action cannot be undone. This will permanently delete this simulation."}
                       </AlertDialogDescription>
                     </AlertDialogHeader>

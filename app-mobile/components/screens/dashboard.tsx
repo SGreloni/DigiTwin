@@ -44,7 +44,7 @@ export function Dashboard() {
         </h1>
         <p className="text-muted-foreground">
           {lang === "es"
-            ? "Simula el crecimiento de tus cultivos hidroponicos"
+            ? "Simula el crecimiento de tus cultivos hidropónicos"
             : "Simulate the growth of your hydroponic crops"}
         </p>
       </section>
@@ -89,7 +89,7 @@ export function Dashboard() {
         <section className="space-y-3">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-semibold">
-              {lang === "es" ? "Ultima Simulacion" : "Last Simulation"}
+              {lang === "es" ? "Última Simulación" : "Last Simulation"}
             </h2>
             <Button
               variant="ghost"
@@ -101,63 +101,67 @@ export function Dashboard() {
               <ArrowRight className="h-4 w-4 ml-1" />
             </Button>
           </div>
-
-          <Card
-            className="cursor-pointer transition-colors hover:bg-accent/50"
-            onClick={viewLastSimulation}
-          >
-            <CardHeader className="pb-3">
-              <div className="flex items-start justify-between">
-                <div>
-                  <CardTitle className="text-base capitalize">
-                    {lastSimulation.config.crop_name}
-                  </CardTitle>
-                  <CardDescription className="text-xs mt-1">
-                    {lastSimulation.config.variety_name.replace(/_/g, " ")}
-                  </CardDescription>
-                </div>
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-                  <Sprout className="h-5 w-5 text-primary" />
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-3 gap-4 text-sm">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-1.5 text-muted-foreground">
-                    <Calendar className="h-3.5 w-3.5" />
-                    <span className="text-xs">
-                      {lang === "es" ? "Fecha" : "Date"}
-                    </span>
+          <div className="flex flex-col gap-2">
+            <Card
+              className="cursor-pointer transition-colors hover:bg-accent/50"
+              onClick={viewLastSimulation}
+            >
+              <CardHeader className="pb-3">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <CardTitle className="text-base capitalize">
+                      {lastSimulation.config.crop_name}
+                    </CardTitle>
+                    <CardDescription className="text-xs mt-1">
+                      {lastSimulation.config.variety_name.replace(/_/g, " ")}
+                    </CardDescription>
                   </div>
-                  <p className="font-medium">
-                    {formatDate(lastSimulation.createdAt)}
-                  </p>
-                </div>
-                <div className="space-y-1">
-                  <div className="flex items-center gap-1.5 text-muted-foreground">
-                    <TrendingUp className="h-3.5 w-3.5" />
-                    <span className="text-xs">
-                      {lang === "es" ? "Rend." : "Yield"}
-                    </span>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+                    <Sprout className="h-5 w-5 text-primary" />
                   </div>
-                  <p className="font-medium">
-                    {lastSimulation.summary.final_TWSO.toFixed(1)}
-                    <span className="text-xs text-muted-foreground ml-1">kg/ha</span>
-                  </p>
                 </div>
-                <div className="space-y-1">
-                  <div className="flex items-center gap-1.5 text-muted-foreground">
-                    <Droplets className="h-3.5 w-3.5" />
-                    <span className="text-xs">LAI</span>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-3 gap-4 text-sm">
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-1.5 text-muted-foreground">
+                      <Calendar className="h-3.5 w-3.5" />
+                      <span className="text-xs">
+                        {lang === "es" ? "Fecha" : "Date"}
+                      </span>
+                    </div>
+                    <p className="font-medium">
+                      {formatDate(lastSimulation.createdAt)}
+                    </p>
                   </div>
-                  <p className="font-medium">
-                    {lastSimulation.summary.final_LAI.toFixed(2)}
-                  </p>
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-1.5 text-muted-foreground">
+                      <TrendingUp className="h-3.5 w-3.5" />
+                      <span className="text-xs">
+                        {lang === "es" ? "Rend." : "Yield"}
+                      </span>
+                    </div>
+                    <p className="font-medium">
+                      {lastSimulation.summary.final_TWSO.toFixed(1)}
+                      <span className="text-xs text-muted-foreground ml-1">kg/ha</span>
+                    </p>
+                  </div>
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-1.5 text-muted-foreground">
+                      <Droplets className="h-3.5 w-3.5" />
+                      <span className="text-xs">LAI</span>
+                    </div>
+                    <p className="font-medium">
+                      {lastSimulation.summary.final_LAI.toFixed(2)}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+            <Button className="text-center" onClick={() => navigateTo("new-simulation")}>
+              {lang === "es" ? "Nueva simulación" : "New simulation"}
+            </Button>
+          </div>
         </section>
       )}
 
@@ -169,7 +173,7 @@ export function Dashboard() {
               <Sprout className="h-6 w-6 text-primary" />
             </div>
             <CardTitle className="text-lg">
-              {lang === "es" ? "Comienza tu primera simulacion" : "Start your first simulation"}
+              {lang === "es" ? "Comienza tu primera simulación" : "Start your first simulation"}
             </CardTitle>
             <CardDescription>
               {lang === "es"
@@ -179,7 +183,7 @@ export function Dashboard() {
           </CardHeader>
           <CardContent className="text-center">
             <Button onClick={() => navigateTo("new-simulation")}>
-              {lang === "es" ? "Crear simulacion" : "Create simulation"}
+              {lang === "es" ? "Crear simulación" : "Create simulation"}
             </Button>
           </CardContent>
         </Card>
@@ -215,13 +219,13 @@ export function Dashboard() {
                 <span className="flex h-6 w-6 items-center justify-center rounded bg-chart-2/20">
                   <Droplets className="h-3.5 w-3.5 text-chart-2" />
                 </span>
-                {lang === "es" ? "Hidroponicos" : "Hydroponics"}
+                {lang === "es" ? "Hidropónicos" : "Hydroponics"}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-xs text-muted-foreground">
                 {lang === "es"
-                  ? "Optimizado para cultivos hidroponicos de cebada forrajera"
+                  ? "Optimizado para cultivos hidropónicos de cebada forrajera"
                   : "Optimized for hydroponic forage barley cultivation"}
               </p>
             </CardContent>

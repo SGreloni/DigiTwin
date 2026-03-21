@@ -14,10 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DigiTwin - Simulador de Cultivos Hidroponicos",
+  title: "DigiTwin - Simulador de Cultivos Hidropónicos",
   description:
-    "Plataforma de gemelos digitales para el cultivo hidroponico de cebada. Simula, configura y visualiza el crecimiento de tus cultivos.",
-  keywords: ["hidroponico", "cebada", "simulacion", "agricultura", "PCSE", "WOFOST", "digital twin"],
+    "Plataforma de gemelos digitales para el cultivo hidropónico de cebada. Simula, configura y visualiza el crecimiento de tus cultivos.",
+  keywords: ["hidropónico", "cebada", "simulación", "agricultura", "PCSE", "WOFOST", "digital twin"],
   authors: [{ name: "DigiTwin" }],
   manifest: "/manifest.json",
   appleWebApp: {

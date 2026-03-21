@@ -2,16 +2,10 @@
 
 import { useApp } from "@/components/app-provider";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Switch } from "@/components/ui/switch";
+
 import { Button } from "@/components/ui/button";
 import { FieldGroup, Field, FieldLabel, FieldDescription } from "@/components/ui/field";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -23,7 +17,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Moon, Sun, Globe, Trash2, Info, Sprout } from "lucide-react";
+import { Trash2, Info, Sprout } from "lucide-react";
 import { clearAllSimulations } from "@/lib/storage";
 
 export function Settings() {
@@ -38,71 +32,6 @@ export function Settings() {
 
   return (
     <div className="flex flex-col gap-4 p-4 pb-24">
-      {/* Appearance */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base flex items-center gap-2">
-            {settings.darkMode ? (
-              <Moon className="h-4 w-4" />
-            ) : (
-              <Sun className="h-4 w-4" />
-            )}
-            {lang === "es" ? "Apariencia" : "Appearance"}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <FieldGroup>
-            <Field>
-              <div className="flex items-center justify-between">
-                <div className="space-y-0.5">
-                  <FieldLabel>
-                    {lang === "es" ? "Modo oscuro" : "Dark mode"}
-                  </FieldLabel>
-                  <FieldDescription>
-                    {lang === "es"
-                      ? "Activa el tema oscuro de la aplicacion"
-                      : "Enable dark theme for the application"}
-                  </FieldDescription>
-                </div>
-                <Switch
-                  checked={settings.darkMode}
-                  onCheckedChange={(checked) => updateSettings({ darkMode: checked })}
-                />
-              </div>
-            </Field>
-          </FieldGroup>
-        </CardContent>
-      </Card>
-
-      {/* Language */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base flex items-center gap-2">
-            <Globe className="h-4 w-4" />
-            {lang === "es" ? "Idioma" : "Language"}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <FieldGroup>
-            <Field>
-              <FieldLabel>{lang === "es" ? "Idioma de la app" : "App language"}</FieldLabel>
-              <Select
-                value={settings.language}
-                onValueChange={(v) => updateSettings({ language: v as "es" | "en" })}
-              >
-                <SelectTrigger className="w-full mt-2">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="es">Espanol</SelectItem>
-                  <SelectItem value="en">English</SelectItem>
-                </SelectContent>
-              </Select>
-            </Field>
-          </FieldGroup>
-        </CardContent>
-      </Card>
-
       {/* Data Management */}
       <Card>
         <CardHeader>
@@ -180,7 +109,7 @@ export function Settings() {
               <h3 className="font-semibold">DigiTwin</h3>
               <p className="text-sm text-muted-foreground">
                 {lang === "es"
-                  ? "Simulador de cultivos hidroponicos"
+                  ? "Simulador de cultivos hidropónicos"
                   : "Hydroponic crop simulator"}
               </p>
             </div>

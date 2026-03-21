@@ -95,10 +95,10 @@ export function NewSimulation() {
 
     try {
       const result = await runSimulation(config);
-      
+
       // Save to local storage
       saveSimulation(result.config, result.summary, result.daily_results);
-      
+
       // Set current result and navigate
       setCurrentResult(result);
       navigateTo("results");
@@ -107,8 +107,8 @@ export function NewSimulation() {
         err instanceof Error
           ? err.message
           : lang === "es"
-          ? "Error al ejecutar la simulacion"
-          : "Failed to run simulation"
+            ? "Error al ejecutar la simulación"
+            : "Failed to run simulation"
       );
     } finally {
       setLoading(false);
@@ -353,7 +353,7 @@ export function NewSimulation() {
         ) : (
           <>
             <Play className="h-5 w-5" />
-            {lang === "es" ? "Ejecutar Simulacion" : "Run Simulation"}
+            {lang === "es" ? "Ejecutar Simulación" : "Run Simulation"}
           </>
         )}
       </Button>

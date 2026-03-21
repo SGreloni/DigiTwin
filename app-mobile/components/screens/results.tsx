@@ -36,7 +36,7 @@ export function Results({ config: propConfig, summary: propSummary, dailyResults
           {lang === "es" ? "No hay resultados disponibles" : "No results available"}
         </p>
         <Button onClick={() => navigateTo("new-simulation")}>
-          {lang === "es" ? "Nueva Simulacion" : "New Simulation"}
+          {lang === "es" ? "Nueva Simulación" : "New Simulation"}
         </Button>
       </div>
     );

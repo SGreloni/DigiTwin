@@ -143,8 +143,8 @@ export function Catalogue() {
                         ? "variedad"
                         : "variedades"
                       : crop.varieties.length === 1
-                      ? "variety"
-                      : "varieties"}
+                        ? "variety"
+                        : "varieties"}
                   </CardDescription>
                 </div>
               </div>
@@ -170,7 +170,7 @@ export function Catalogue() {
                           <div className="flex items-center gap-2">
                             <span>{variety.replace(/_/g, " ")}</span>
                             <Badge variant="secondary" className="text-xs">
-                              {lang === "es" ? "Hidroponico" : "Hydroponic"}
+                              {lang === "es" ? "Hidropónico" : "Hydroponic"}
                             </Badge>
                           </div>
                         </AccordionTrigger>

@@ -8,19 +8,19 @@ interface AppContextType {
   // Navigation
   currentScreen: AppScreen;
   navigateTo: (screen: AppScreen) => void;
-  
+
   // Settings
   settings: AppSettings;
   updateSettings: (settings: Partial<AppSettings>) => void;
-  
+
   // Current simulation
   currentResult: SimulationResult | null;
   setCurrentResult: (result: SimulationResult | null) => void;
-  
+
   // History detail view
   selectedHistoryItem: StoredSimulation | null;
   setSelectedHistoryItem: (item: StoredSimulation | null) => void;
-  
+
   // Onboarding
   onboardingComplete: boolean;
   completeOnboarding: () => void;
@@ -38,7 +38,7 @@ export function useApp() {
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [currentScreen, setCurrentScreen] = useState<AppScreen>("dashboard");
-  const [settings, setSettings] = useState<AppSettings>({ darkMode: true, language: "es" });
+  const [settings, setSettings] = useState<AppSettings>({ darkMode: false, language: "en" });
   const [currentResult, setCurrentResult] = useState<SimulationResult | null>(null);
   const [selectedHistoryItem, setSelectedHistoryItem] = useState<StoredSimulation | null>(null);
   const [onboardingComplete, setOnboardingState] = useState(true);
@@ -55,7 +55,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   // Apply dark mode class
   useEffect(() => {
     if (!mounted) return;
-    
+
     if (settings.darkMode) {
       document.documentElement.classList.add("dark");
     } else {

@@ -71,8 +71,8 @@ export function clearAllSimulations(): void {
 // Settings storage
 export function getSettings(): AppSettings {
   const defaults: AppSettings = {
-    darkMode: true,
-    language: "es",
+    darkMode: false,
+    language: "en",
   };
 
   if (typeof window === "undefined") return defaults;

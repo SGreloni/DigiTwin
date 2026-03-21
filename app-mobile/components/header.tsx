@@ -2,7 +2,7 @@
 
 import { useApp } from "./app-provider";
 import { Button } from "@/components/ui/button";
-import { Sprout, ArrowLeft, Home, History, BookOpen, Settings } from "lucide-react";
+import { Sprout, ArrowLeft, Home, History, BookOpen, Settings, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { AppScreen } from "@/lib/types";
 
@@ -18,7 +18,7 @@ const NAV_ITEMS: Array<{
 ];
 
 export function Header() {
-  const { currentScreen, navigateTo, settings } = useApp();
+  const { currentScreen, navigateTo, settings, updateSettings } = useApp();
   const lang = settings.language;
   const showBack = currentScreen !== "dashboard";
 
@@ -79,8 +79,27 @@ export function Header() {
           })}
         </nav>
 
-        {/* Desktop: spacer to balance the logo on the left */}
-        <div className="hidden md:block w-[160px]" />
+        {/* Right side actions (Theme + Language Toggle) */}
+        <div className="flex flex-1 md:flex-none md:w-[160px] items-center justify-end gap-1">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => updateSettings({ darkMode: !settings.darkMode })}
+            className="w-10 px-0"
+            aria-label={lang === "en" ? "Toggle theme" : "Cambiar tema"}
+          >
+            {settings.darkMode ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => updateSettings({ language: lang === "en" ? "es" : "en" })}
+            className="w-12 px-0 font-bold"
+            aria-label={lang === "en" ? "Cambiar a Español" : "Switch to English"}
+          >
+            {lang === "en" ? "ES" : "EN"}
+          </Button>
+        </div>
       </div>
     </header>
   );

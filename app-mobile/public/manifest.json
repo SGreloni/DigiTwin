@@ -1,7 +1,7 @@
 {
   "name": "DigiTwin - Simulador de Cultivos",
   "short_name": "DigiTwin",
-  "description": "Plataforma de gemelos digitales para el cultivo hidroponico de cebada",
+  "description": "Plataforma de gemelos digitales para el cultivo hidropónico de cebada",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f1711",
