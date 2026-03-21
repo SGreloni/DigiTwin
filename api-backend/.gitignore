@@ -26,3 +26,6 @@ Thumbs.db
 
 # PCSE cache
 data/crop/YAMLCropDataProvider.pkl
+
+# Wheater data generated
+data/meteo/weather_hydro.csv
