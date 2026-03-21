@@ -5,8 +5,7 @@ Refactored from the notebook ``02 Running with custom input data.ipynb``.
 
 from __future__ import annotations
 
-import uuid
-from datetime import UTC, datetime, timedelta
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import pandas as pd
@@ -205,9 +204,7 @@ def run_simulation(req: SimulationRequest) -> SimulationResponse:
     )
 
     return SimulationResponse(
-        simulation_id=str(uuid.uuid4()),
         config=req,
         summary=summary,
         daily_results=daily,
-        created_at=datetime.now(UTC),
     )

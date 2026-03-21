@@ -58,26 +58,9 @@ class SimulationSummary(BaseModel):
 
 
 class SimulationResponse(BaseModel):
-    simulation_id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     config: SimulationRequest
     summary: SimulationSummary
     daily_results: list[DailyResult]
-    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
-
-
-class SimulationListItem(BaseModel):
-    simulation_id: str
-    crop_name: str
-    variety_name: str
-    fecha_inicio: date
-    dias_cultivo: int
-    final_TWSO: Optional[float] = None
-    created_at: datetime
-
-
-class SimulationListResponse(BaseModel):
-    total: int
-    items: list[SimulationListItem]
 
 
 # ── Crops ────────────────────────────────────────────────────────────────

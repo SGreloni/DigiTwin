@@ -85,7 +85,6 @@
 
 ```json
 {
-  "simulation_id": "uuid",
   "config": { ... },
   "summary": {
     "final_DVS": 0.123,
@@ -100,88 +99,11 @@
       "TWLV": 0.0, "TWST": 0.0, "TWRT": 0.0, "TRA": 0.0,
       "RD": 10.0, "SM": 0.3, "WWLOW": 0.0, "RFTRA": 1.0
     }
-  ],
-  "created_at": "2026-03-21T12:00:00Z"
-}
-```
-
-**Errors**: `400` invalid input, `422` validation errors, `500` simulation failure.
-
-</details>
-
----
-
-### 2.2 `GET /simulations` - List simulations
-
-<details>
-<summary>Details</summary>
-
-**Query parameters**:
-
-| Param  | Type | Default | Description |
-|--------|------|---------|-------------|
-| `skip`  | int  | `0`    | Pagination offset |
-| `limit` | int  | `20`   | Max items per page |
-
-**Response** `200 OK`:
-
-```json
-{
-  "total": 42,
-  "items": [
-    {
-      "simulation_id": "uuid",
-      "crop_name": "barley",
-      "variety_name": "...",
-      "fecha_inicio": "2024-01-01",
-      "dias_cultivo": 10,
-      "final_TWSO": 50.2,
-      "created_at": "2026-03-21T12:00:00Z"
-    }
   ]
 }
 ```
 
-</details>
-
----
-
-### 2.3 `GET /simulations/{simulation_id}` - Get simulation detail
-
-<details>
-<summary>Details</summary>
-
-**Response** `200 OK`: same shape as the POST response (section 2.1).
-
-**Errors**: `404` if not found.
-
-</details>
-
----
-
-### 2.4 `DELETE /simulations/{simulation_id}` - Delete a simulation
-
-<details>
-<summary>Details</summary>
-
-**Response** `204 No Content`.
-
-**Errors**: `404` if not found.
-
-</details>
-
----
-
-### 2.5 `GET /simulations/{simulation_id}/export` - Export results as CSV
-
-<details>
-<summary>Details</summary>
-
-**Response** `200 OK` with `Content-Type: text/csv`.
-
-CSV columns: `day,DVS,LAI,TAGP,TWSO,TWLV,TWST,TWRT,TRA,RD,SM,WWLOW,RFTRA`.
-
-**Errors**: `404` if not found.
+**Errors**: `400` invalid input, `422` validation errors, `500` simulation failure.
 
 </details>
 
