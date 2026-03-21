@@ -1,0 +1,27 @@
+services:
+  backend:
+    build:
+      context: ./api-backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATA_DIR=/app/data
+      - DEBUG=false
+      - CORS_ORIGINS=["*"]
+    volumes:
+      - ./api-backend/data:/app/data
+    restart: unless-stopped
+
+  # ── Frontend (placeholder) ────────────────────────────────────────────
+  # Uncomment and configure when the mobile app / web frontend is ready.
+  #
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - backend
+  #   restart: unless-stopped
