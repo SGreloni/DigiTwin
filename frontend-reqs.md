@@ -9,12 +9,13 @@
 
 ## 1. Target Platforms
 
+We will use React Native as our **mobile cross-platform** framework, and React for the web version.
+
 | Platform | Minimum version |
 |----------|-----------------|
+| Web      | Modern Browsers |
 | iOS      | 15+             |
 | Android  | 12+             |
-
-A **cross-platform** framework (e.g. React Native, Flutter) is recommended.
 
 ---
 
@@ -29,9 +30,7 @@ A **cross-platform** framework (e.g. React Native, Flutter) is recommended.
 
 ## 3. Feature Map
 
-### 3.1 Authentication & Onboarding
-- Sign-up / login (email + password, or social OAuth).
-- JWT-based session management.
+### 3.1 Onboarding
 - Simple onboarding carousel explaining the app.
 
 ### 3.2 Dashboard (Home)
@@ -74,22 +73,20 @@ Once the backend responds, display:
 3. **Full daily table** (expandable / exportable):
    - Columns: `day`, `DVS`, `LAI`, `TAGP`, `TWSO`, `TWLV`, `TWST`, `TWRT`, `TRA`, `RD`, `SM`, `WWLOW`, `RFTRA`.
 
-4. **Share / Export**: export results as CSV or share a simulation link.
+4. **Share / Export**: export results as CSV (generated locally by the app).
 
 ### 3.5 Simulation History
-- List of past simulations (stored in backend).
+- List of past simulations (stored locally on the device).
 - Each card shows: date, crop, variety, final `TWSO`, status.
 - Tap to view full results.
-- Delete individual simulations.
+- Delete individual simulations from local storage.
 
 ### 3.6 Crop & Variety Catalogue (read-only)
 - Browse available crops (e.g. barley).
 - Browse varieties under each crop.
 - Shows key parameter summary.
 
-### 3.7 Settings / Profile
-- Edit profile (name, email).
-- Change password.
+### 3.7 Settings
 - Toggle dark mode.
 - App version & about.
 
@@ -119,7 +116,6 @@ Once the backend responds, display:
 ```
 
 - All communication is via **REST / JSON**.
-- Authentication via **JWT Bearer tokens**.
 - Simulation may take a few seconds → frontend shows a loading/progress indicator.
 
 ---
@@ -129,7 +125,7 @@ Once the backend responds, display:
 | Category       | Requirement |
 |----------------|-------------|
 | Performance    | Simulation results should appear in < 10 s on average |
-| Offline        | Simulation history viewable offline (local cache) |
+| Offline        | Simulation history stored and viewable offline (local storage) |
 | i18n           | Spanish by default; English second |
 | Accessibility  | Min AA contrast, screen-reader labels |
-| Security       | HTTPS only, JWT tokens, input validation |
+| Security       | HTTPS only, input validation |
