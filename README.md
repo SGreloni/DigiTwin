@@ -19,7 +19,7 @@ DigiTwin is a digital-twin platform for hydroponic barley (and other crop) culti
 ```
 
 - **Backend** — FastAPI (Python) inside `api-backend/`.
-- **Frontend** — Placeholder (not yet implemented; see `frontend-reqs.md`).
+- **Frontend** — Next.js (React / Web app) inside `mobile-app/`.
 - **Simulation engine** — [PCSE 6.x](https://pypi.org/project/pcse/) running the WOFOST 7.2 potential-production model.
 
 ## API Endpoints
@@ -32,10 +32,6 @@ Full specification in [`api-endpoints.md`](api-endpoints.md). Quick overview:
 | `GET` | `/api/v1/crops` | List available crops |
 | `GET` | `/api/v1/crops/{name}/varieties` | Varieties for a crop |
 | `POST` | `/api/v1/simulations` | Run a simulation |
-| `GET` | `/api/v1/simulations` | List history |
-| `GET` | `/api/v1/simulations/{id}` | Simulation detail |
-| `DELETE` | `/api/v1/simulations/{id}` | Delete simulation |
-| `GET` | `/api/v1/simulations/{id}/export` | Export CSV |
 
 ## Documentation
 
@@ -61,7 +57,8 @@ git clone <repo-url> && cd DigiTwin
 # Build and start
 docker compose up --build
 
-# The API is available at:
+# The applications are available at:
+#   http://localhost:3000        (Frontend App)
 #   http://localhost:8000/docs   (Swagger UI)
 #   http://localhost:8000/api/v1/health
 ```
@@ -99,6 +96,11 @@ DigiTwin/
 │   ├── Dockerfile
 │   ├── requirements.txt
 │   └── README.md         # Local dev guide
+├── mobile-app/           # Frontend Next.js / React app
+│   ├── app/              # Next.js App Router source
+│   ├── components/       # UI Components
+│   ├── Dockerfile
+│   └── package.json
 ├── docker-compose.yml    # Orchestration
 ├── frontend-reqs.md      # Mobile-app requirements
 ├── api-endpoints.md      # API specification

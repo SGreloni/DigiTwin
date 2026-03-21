@@ -13,15 +13,14 @@ services:
       - ./api-backend/data:/app/data
     restart: unless-stopped
 
-  # ── Frontend (placeholder) ────────────────────────────────────────────
-  # Uncomment and configure when the mobile app / web frontend is ready.
-  #
-  # frontend:
-  #   build:
-  #     context: ./frontend
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "3000:3000"
-  #   depends_on:
-  #     - backend
-  #   restart: unless-stopped
+  frontend:
+    build:
+      context: ./app-mobile
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      - NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api/v1
+    restart: unless-stopped
