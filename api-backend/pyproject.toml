@@ -1,0 +1,8 @@
+[tool.pytest.ini_options]
+filterwarnings = [
+    # Suppress PCSE / traitlets deprecation warnings (third-party, not fixable by us)
+    "ignore::DeprecationWarning:pcse",
+    "ignore::DeprecationWarning:traitlets",
+    # Suppress the SyntaxWarning in pcse's own test file
+    "ignore:invalid escape sequence:SyntaxWarning:pcse",
+]
