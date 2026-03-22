@@ -18,7 +18,7 @@ export interface DailyResult {
   DVS: number;  // Development Stage
   LAI: number;  // Leaf Area Index
   TAGP: number; // Total Above-Ground Production (kg/ha)
-  TWSO: number; // Total Weight Storage Organs (yield, kg/ha)
+
   TWLV: number; // Total Weight Leaves
   TWST: number; // Total Weight Stems
   TWRT: number; // Total Weight Roots
@@ -33,7 +33,7 @@ export interface SimulationSummary {
   final_DVS: number;
   final_LAI: number;
   final_TAGP: number;
-  final_TWSO: number;
+
 }
 
 export interface SimulationResult {

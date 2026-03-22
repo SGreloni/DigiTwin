@@ -183,7 +183,7 @@ def run_simulation(req: SimulationRequest) -> SimulationResponse:
                 DVS=row.get("DVS"),
                 LAI=row.get("LAI"),
                 TAGP=row.get("TAGP"),
-                TWSO=row.get("TWSO"),
+
                 TWLV=row.get("TWLV"),
                 TWST=row.get("TWST"),
                 TWRT=row.get("TWRT"),
@@ -200,7 +200,7 @@ def run_simulation(req: SimulationRequest) -> SimulationResponse:
         final_DVS=last.get("DVS"),
         final_LAI=last.get("LAI"),
         final_TAGP=last.get("TAGP"),
-        final_TWSO=last.get("TWSO"),
+
     )
 
     return SimulationResponse(

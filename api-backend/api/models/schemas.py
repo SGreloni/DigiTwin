@@ -39,7 +39,7 @@ class DailyResult(BaseModel):
     DVS: Optional[float] = None
     LAI: Optional[float] = None
     TAGP: Optional[float] = None
-    TWSO: Optional[float] = None
+
     TWLV: Optional[float] = None
     TWST: Optional[float] = None
     TWRT: Optional[float] = None
@@ -54,7 +54,7 @@ class SimulationSummary(BaseModel):
     final_DVS: Optional[float] = None
     final_LAI: Optional[float] = None
     final_TAGP: Optional[float] = None
-    final_TWSO: Optional[float] = None
+
 
 
 class SimulationResponse(BaseModel):

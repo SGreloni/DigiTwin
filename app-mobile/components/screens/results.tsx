@@ -53,7 +53,6 @@ export function Results({ config: propConfig, summary: propSummary, dailyResults
     LAI: { label: "LAI", color: "var(--chart-2)" },
     TAGP: { label: "TAGP", color: "var(--chart-3)" },
     SM: { label: "SM", color: "var(--chart-4)" },
-    TWSO: { label: "TWSO", color: "var(--chart-5)" },
   };
 
   // Format data for charts (convert day string to index)
@@ -65,19 +64,7 @@ export function Results({ config: propConfig, summary: propSummary, dailyResults
   return (
     <div className="flex flex-col gap-4 p-4 pb-24">
       {/* Summary KPIs */}
-      <section className="grid grid-cols-2 gap-3">
-        <Card className="bg-primary/5 border-primary/20">
-          <CardHeader className="pb-2">
-            <CardDescription className="flex items-center gap-2 text-primary">
-              <TrendingUp className="h-4 w-4" />
-              {lang === "es" ? "Rendimiento" : "Yield"} (TWSO)
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{summary.final_TWSO.toFixed(1)}</div>
-            <p className="text-xs text-muted-foreground">kg/ha</p>
-          </CardContent>
-        </Card>
+      <section className="grid grid-cols-3 gap-3">
 
         <Card className="bg-chart-3/5 border-chart-3/20">
           <CardHeader className="pb-2">
@@ -293,7 +280,7 @@ export function Results({ config: propConfig, summary: propSummary, dailyResults
                       <TableHead className="sticky top-0 bg-card">DVS</TableHead>
                       <TableHead className="sticky top-0 bg-card">LAI</TableHead>
                       <TableHead className="sticky top-0 bg-card">TAGP</TableHead>
-                      <TableHead className="sticky top-0 bg-card">TWSO</TableHead>
+
                       <TableHead className="sticky top-0 bg-card">SM</TableHead>
                     </TableRow>
                   </TableHeader>
@@ -304,7 +291,7 @@ export function Results({ config: propConfig, summary: propSummary, dailyResults
                         <TableCell className="font-mono text-xs">{row.DVS.toFixed(4)}</TableCell>
                         <TableCell className="font-mono text-xs">{row.LAI.toFixed(4)}</TableCell>
                         <TableCell className="font-mono text-xs">{row.TAGP.toFixed(2)}</TableCell>
-                        <TableCell className="font-mono text-xs">{row.TWSO.toFixed(2)}</TableCell>
+
                         <TableCell className="font-mono text-xs">{row.SM.toFixed(4)}</TableCell>
                       </TableRow>
                     ))}

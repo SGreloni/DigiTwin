@@ -130,7 +130,7 @@ export function Dashboard() {
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-3 gap-4 text-sm">
+                <div className="grid grid-cols-2 gap-4 text-sm">
                   <div className="space-y-1">
                     <div className="flex items-center gap-1.5 text-muted-foreground">
                       <Calendar className="h-3.5 w-3.5" />
@@ -142,18 +142,7 @@ export function Dashboard() {
                       {formatDate(lastSimulation.createdAt)}
                     </p>
                   </div>
-                  <div className="space-y-1">
-                    <div className="flex items-center gap-1.5 text-muted-foreground">
-                      <TrendingUp className="h-3.5 w-3.5" />
-                      <span className="text-xs">
-                        {lang === "es" ? "Rend." : "Yield"}
-                      </span>
-                    </div>
-                    <p className="font-medium">
-                      {lastSimulation.summary.final_TWSO.toFixed(1)}
-                      <span className="text-xs text-muted-foreground ml-1">kg/ha</span>
-                    </p>
-                  </div>
+
                   <div className="space-y-1">
                     <div className="flex items-center gap-1.5 text-muted-foreground">
                       <Droplets className="h-3.5 w-3.5" />

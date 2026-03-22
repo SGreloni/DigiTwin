@@ -149,7 +149,7 @@ export function History() {
                 onClick={() => handleView(simulation)}
                 className="w-full text-left"
               >
-                <div className="grid grid-cols-3 gap-3 text-sm mb-3">
+                <div className="grid grid-cols-2 gap-3 text-sm mb-3">
                   <div className="space-y-0.5">
                     <div className="flex items-center gap-1 text-muted-foreground">
                       <Calendar className="h-3 w-3" />
@@ -159,15 +159,7 @@ export function History() {
                       {formatDate(simulation.createdAt)}
                     </p>
                   </div>
-                  <div className="space-y-0.5">
-                    <div className="flex items-center gap-1 text-muted-foreground">
-                      <TrendingUp className="h-3 w-3" />
-                      <span className="text-xs">{lang === "es" ? "Rend." : "Yield"}</span>
-                    </div>
-                    <p className="text-xs font-medium">
-                      {simulation.summary.final_TWSO.toFixed(1)} kg/ha
-                    </p>
-                  </div>
+
                   <div className="space-y-0.5">
                     <div className="flex items-center gap-1 text-muted-foreground">
                       <span className="text-xs">LAI</span>

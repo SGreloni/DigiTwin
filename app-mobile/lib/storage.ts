@@ -115,7 +115,7 @@ export function exportToCSV(dailyResults: DailyResult[], config: SimulationConfi
     "DVS",
     "LAI",
     "TAGP",
-    "TWSO",
+
     "TWLV",
     "TWST",
     "TWRT",
@@ -131,7 +131,7 @@ export function exportToCSV(dailyResults: DailyResult[], config: SimulationConfi
     r.DVS,
     r.LAI,
     r.TAGP,
-    r.TWSO,
+
     r.TWLV,
     r.TWST,
     r.TWRT,
