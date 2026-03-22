@@ -130,6 +130,18 @@ export function Settings() {
             </div>
           </div>
 
+          <div className="mt-4 space-y-2 text-sm">
+            <div className="font-medium text-foreground mb-1">
+              {lang === "es" ? "Desarrolladores" : "Developers"}
+            </div>
+            <ul className="text-muted-foreground space-y-1 pl-4 list-disc">
+              <li>Agustín Gusella</li>
+              <li>Ignacio Vittorini Fennema</li>
+              <li>Martín González Prieto</li>
+              <li>Santiago Greloni</li>
+            </ul>
+          </div>
+
           <div className="mt-4 pt-4 border-t border-border text-xs text-muted-foreground text-center">
             {lang === "es"
               ? "Desarrollado para agricultura de precision"
