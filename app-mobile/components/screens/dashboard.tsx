@@ -48,40 +48,48 @@ export function Dashboard() {
             : "Simulate the growth of your hydroponic crops"}
         </p>
       </section>
+      {/* Feature Cards */}
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">
+          {lang === "es" ? "Caracteristicas" : "Features"}
+        </h2>
+        <div className="grid gap-3">
+          <Card className="bg-card/50">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm flex items-center gap-2">
+                <span className="flex h-6 w-6 items-center justify-center rounded bg-chart-1/20">
+                  <TrendingUp className="h-3.5 w-3.5 text-chart-1" />
+                </span>
+                {lang === "es" ? "Predicciones precisas" : "Accurate predictions"}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-xs text-muted-foreground">
+                {lang === "es"
+                  ? "Basado en el modelo PCSE/WOFOST de simulacion de cultivos"
+                  : "Based on the PCSE/WOFOST crop simulation model"}
+              </p>
+            </CardContent>
+          </Card>
 
-      {/* Stats Overview */}
-      <section className="grid grid-cols-2 gap-4">
-        <Card className="bg-card/50">
-          <CardHeader className="pb-2">
-            <CardDescription className="flex items-center gap-2">
-              <Sprout className="h-4 w-4 text-primary" />
-              {lang === "es" ? "Cultivos" : "Crops"}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">2</div>
-            <p className="text-xs text-muted-foreground">
-              {lang === "es" ? "disponibles" : "available"}
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-card/50">
-          <CardHeader className="pb-2">
-            <CardDescription className="flex items-center gap-2">
-              <TrendingUp className="h-4 w-4 text-chart-2" />
-              {lang === "es" ? "Simulaciones" : "Simulations"}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">
-              {getStoredSimulations().length}
-            </div>
-            <p className="text-xs text-muted-foreground">
-              {lang === "es" ? "realizadas" : "completed"}
-            </p>
-          </CardContent>
-        </Card>
+          <Card className="bg-card/50">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm flex items-center gap-2">
+                <span className="flex h-6 w-6 items-center justify-center rounded bg-chart-2/20">
+                  <Droplets className="h-3.5 w-3.5 text-chart-2" />
+                </span>
+                {lang === "es" ? "Hidropónicos" : "Hydroponics"}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-xs text-muted-foreground">
+                {lang === "es"
+                  ? "Optimizado para cultivos hidropónicos de cebada forrajera"
+                  : "Optimized for hydroponic forage barley cultivation"}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
       </section>
 
       {/* Last Simulation */}
@@ -189,49 +197,7 @@ export function Dashboard() {
         </Card>
       )}
 
-      {/* Feature Cards */}
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold">
-          {lang === "es" ? "Caracteristicas" : "Features"}
-        </h2>
-        <div className="grid gap-3">
-          <Card className="bg-card/50">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded bg-chart-1/20">
-                  <TrendingUp className="h-3.5 w-3.5 text-chart-1" />
-                </span>
-                {lang === "es" ? "Predicciones precisas" : "Accurate predictions"}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-xs text-muted-foreground">
-                {lang === "es"
-                  ? "Basado en el modelo PCSE/WOFOST de simulacion de cultivos"
-                  : "Based on the PCSE/WOFOST crop simulation model"}
-              </p>
-            </CardContent>
-          </Card>
 
-          <Card className="bg-card/50">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded bg-chart-2/20">
-                  <Droplets className="h-3.5 w-3.5 text-chart-2" />
-                </span>
-                {lang === "es" ? "Hidropónicos" : "Hydroponics"}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-xs text-muted-foreground">
-                {lang === "es"
-                  ? "Optimizado para cultivos hidropónicos de cebada forrajera"
-                  : "Optimized for hydroponic forage barley cultivation"}
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
     </div>
   );
 }
